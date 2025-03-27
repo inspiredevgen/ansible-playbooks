@@ -1,0 +1,15 @@
+- name: Installation du Stack LAMP
+  hosts: test
+  become: yes
+  tasks:
+    - name: Installation de plusieurs packages
+      register: updatesys
+      apt:
+        update_cache: yes
+        name:
+          - firewalld
+          - apache2
+          - mariadb-server
+          - php
+          - php-mysql
+        state: present

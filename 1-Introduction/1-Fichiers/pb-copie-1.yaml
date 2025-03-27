@@ -1,0 +1,13 @@
+---
+- name: Copier les fichiers avec Ansible
+  hosts: test_group
+  tasks:
+    - name: Copie le fichier 'test-1.txt' de la machine locale vers le nodes
+      copy:
+        src: ~/ansible/test-1.txt
+        dest: /tmp/test-1.txt
+
+    - name: Copie le fichier 'test-2.txt' de la machine locale vers le nodes avec un nouveau nom
+      copy:
+        src: ~/ansible/test-2.txt
+        dest: /tmp/la-copie.txt

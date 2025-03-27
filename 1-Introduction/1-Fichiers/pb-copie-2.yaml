@@ -1,0 +1,16 @@
+---
+- name: Ansible Copy Directory
+  hosts: servers
+  become: true
+  tasks:
+
+# Si le dossier n'existe pas, Ansible le cree
+    - name: Copie le folder de la machine local vers une machine distante
+      copy:
+        src: ~/ansible/website_conf/
+        dest: /tmp/web01/
+# Si le dossier existe Ansible copie les fichiers vers la destination
+    - name: Copie le contenu d'un dossier vers un serveur distant
+      copy:
+        src: ~/ansible/website_conf/
+        dest: /tmp/web/

@@ -1,0 +1,14 @@
+---
+- hosts: servers
+  become: true
+  tasks:
+    - name: creer plusieurs fichiers a la fois
+      file:
+        path: /tmp/{{ item }}  
+        state: touch
+        mode: 0721
+        owner: admin12
+      with_items:
+      - toronto.txt
+      - montreal.txt
+      - vancouver.txt
