@@ -1,0 +1,11 @@
+---
+- name: Playbook pour exécuter les commandes d'installation apt
+  become: true
+  hosts: test
+
+  tasks:
+  - name: Installation de Apache
+    apt:
+      name: apache2
+      state: absent
+      update_cache: true

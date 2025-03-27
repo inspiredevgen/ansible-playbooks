@@ -1,0 +1,18 @@
+---
+ - name: Ansible valide si les packages sont installés
+   hosts: test
+   become: true
+   tasks:
+    - name: Gather Package facts
+      package_facts:
+        manager: auto
+    - name: Valider si le package est installé ou non
+      debug: 
+        msg: "{{item}} est installé"
+      when: '"{{item}}" in ansible_facts.packages'
+      with_items:
+          - firewalld
+          - apache2
+          - mariadb-server
+          - php
+          - php-mysql

@@ -1,2 +1,1 @@
-# ansible-playbooks
-Ansible Playbook example
+# Ansible Playbook
