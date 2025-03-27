@@ -1,0 +1,12 @@
+---
+- hosts: boreal
+  become: yes
+  tasks:
+    - name: Mettez à jour le cache apt et assurez-vous que Vim, Curl et Unzip sont installés
+      apt:
+        name: "{{ item }}"
+        update_cache: yes
+      loop:
+        - zip
+        - curl
+        - unzip

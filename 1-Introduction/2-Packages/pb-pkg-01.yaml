@@ -1,0 +1,8 @@
+---
+- hosts: appservers
+  become: yes
+  tasks:
+    - name: mettre-à-jour le cache apt et assurer que Zip soit installé
+      apt:
+        name: zip
+        update_cache: yes

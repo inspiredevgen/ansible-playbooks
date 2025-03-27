@@ -1,0 +1,6 @@
+---
+- hosts: all
+  become: true
+  tasks:
+  - name: Installation de unzip
+    apt: name=unzip state=absent update_cache=true

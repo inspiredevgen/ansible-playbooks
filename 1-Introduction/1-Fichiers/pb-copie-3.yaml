@@ -1,0 +1,21 @@
+---
+- name: Copie les fichiers avec les permission avec Ansible
+  hosts: servers
+  become: true
+  tasks:
+
+    - name: Copie du fichier programme.py vers les machines distantes avec permission
+      copy:
+        src: ~/ansible/Python/programme.py
+        dest: /tmp/applications/code.py
+        owner: admin12
+        group: admin12
+        mode: '0644'
+
+    - name: Copie les fichiers dans myapp/game1/ vers /conf
+      copy:
+        src: ~/ansible/Python/myapp/game1/
+        dest: /tmp/games/conf/
+        owner: admin12
+        group: admin12
+        mode: '0755'
