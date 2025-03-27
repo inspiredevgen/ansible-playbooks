@@ -1,0 +1,8 @@
+---
+- hosts: servers
+  become: true
+  tasks:
+    - name: creer un fichier
+      file:
+       path: /tmp/automatisation.txt  
+       state: touch

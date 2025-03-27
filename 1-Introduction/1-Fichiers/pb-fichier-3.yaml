@@ -1,0 +1,17 @@
+---
+- hosts: servers
+  become: true
+  tasks:
+    - name: creer un fichier avec permissions
+      file:
+        path: /tmp/boreal-1.txt  
+        state: touch
+        mode: 0421
+        owner: admin12
+  
+    - name: autre creation de fichiers
+      file:
+        path: /tmp/nouveau.txt     
+        state: touch      
+        mode: "u=rw,g=w,o=X"      
+        owner: admin12 
