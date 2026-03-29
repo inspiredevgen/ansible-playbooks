@@ -5,5 +5,5 @@
     - name: Installer Apache
       apt:
         name: apache2
-        state: absent
+        state: present
         update_cahe: yes
